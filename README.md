@@ -1,4 +1,4 @@
-# [![Node-Red](http://nodered.org/node-red.png) (https://github.com/rosterloh/red-sniffer)]red-sniffer
+# [![Node-Red](http://nodered.org/node-red.png)](https://github.com/rosterloh/red-sniffer) red-sniffer
 [![Build Status](https://travis-ci.org/rosterloh/red-sniffer.png?branch=master)](https://travis-ci.org/rosterloh/red-sniffer)
 [![Dependency Status](https://david-dm.org/rosterloh/red-sniffer.png)](https://david-dm.org/rosterloh/red-sniffer)
 
