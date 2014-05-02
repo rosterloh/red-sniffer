@@ -1,0 +1,28 @@
+{
+  "name": "red-sniffer",
+  "version": "0.0.0",
+  "description": "Buddi ISM packet analyser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rosterloh/red-sniffer.git"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "author": "Richard Osterloh <richard.osterloh@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rosterloh/red-sniffer/issues"
+  },
+  "homepage": "https://github.com/rosterloh/red-sniffer",
+  "dependencies": {
+    "node-red": "^0.7.2",
+    "express": "^4.1.1",
+    "serialport": "^1.4.0",
+    "mongodb": "^1.4.3"
+  }
+}
