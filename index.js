@@ -1,10 +1,10 @@
 'use strict';
 
-var http            = require('http');
-var express         = require('express');
-var RED 			= require('node-red');
-var serial 			= require('serialport');
-var mongo 			= require('mongodb');
+var http       = require('http');
+var express    = require('express');
+var RED        = require('node-red');
+var serial     = require('serialport');
+var mongo      = require('mongodb');
 
 // Create an Express app
 var app = express();
@@ -17,7 +17,7 @@ var server = http.createServer(app);
 
 // Create the settings object
 var settings = {
-    httpAdminRoot:"/red",
+    httpAdminRoot: "/", //"/red",
     httpNodeRoot: "/api",
     userDir: __dirname+'/.nodered',
     //nodesDir: __dirname+'/nodes'

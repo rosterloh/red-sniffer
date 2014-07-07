@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/rosterloh/red-sniffer",
   "dependencies": {
-    "node-red": "^0.7.2",
-    "express": "^4.1.1",
+    "node-red": "^0.8.1",
+    "express": "^4.5.1",
     "serialport": "^1.4.0",
-    "mongodb": "^1.4.3"
+    "mongodb": "^1.4.7"
   }
 }
