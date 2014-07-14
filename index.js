@@ -17,10 +17,13 @@ var server = http.createServer(app);
 
 // Create the settings object
 var settings = {
-    httpAdminRoot: "/", //"/red",
-    httpNodeRoot: "/api",
-    userDir: __dirname+'/.nodered',
-    //nodesDir: __dirname+'/nodes'
+  httpAdminRoot: "/red",
+  httpNodeRoot: "/api",
+  httpStatic: '/',
+  userDir: __dirname+'/.nodered',
+  nodesDir: __dirname+'/nodes',
+  flowFile: 'flows.json',
+  verbose: true
 };
 
 // Initialise the runtime with a server and settings
