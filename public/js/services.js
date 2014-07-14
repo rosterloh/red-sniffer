@@ -11,11 +11,12 @@ angular.module('snifferApp.services', []).
     service.connect = function() {
       if(service.ws) { return; }
 
-      var ws = new WebSocket("ws://mp-3dx6v.buddi.local:8000/api/ws/serial");
+      var ws = new WebSocket("ws://mp-3dx6v.buddi.local/api/ws/serial");
 
       ws.onopen = function() {
         //service.callback("Succeeded to open a connection");
         console.log('Socket opened');
+        ws.send('binary');
       };
 
       ws.onerror = function() {

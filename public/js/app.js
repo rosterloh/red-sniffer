@@ -26,6 +26,21 @@ angular.module('snifferApp').config(['$stateProvider', '$urlRouterProvider',
                 url: '/config',
                 templateUrl: 'views/config.html',
                 controller: 'ConfigController'
+            })
+            .state('eeprom', {
+                url: '/eeprom',
+                templateUrl: 'views/eeprom.html',
+                controller: 'EepromController'
+            })
+            .state('ubin', {
+                url: '/ubin',
+                templateUrl: 'views/ubin.html',
+                controller: 'UbinController'
+            })
+            .state('tracker', {
+                url: '/tracker',
+                templateUrl: 'views/tracker.html',
+                controller: 'TrackerController'
             });
     }
 ]);

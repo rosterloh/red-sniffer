@@ -13,9 +13,11 @@
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.0/ui-bootstrap.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.0/ui-bootstrap-tpls.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
-  <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+  <!-- <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script> -->
   <!-- <script src="/socket.io/socket.io.js"></script> -->
   <!-- <script src="http://smoothiecharts.org/smoothie.js"></script> -->
+  <!-- note: moment.js must be loaded before vis.js, else vis.js uses its embedded version of moment.js -->
+  <!-- <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script> -->
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/vis/3.0.0/vis.min.js"></script>
   <script src="build/app.min.js"></script>
 </head>
@@ -24,7 +26,7 @@
   <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="home">ISM Sniffer</a>
+        <a class="navbar-brand" ui-sref="home">Firmware Utilities</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -33,9 +35,13 @@
             <ul class="dropdown-menu">
               <li><a href="#">Click an option</a></li>
               <li class="divider"></li>
-              <li><a ui-sref="home">Home</a></li>
+              <li><a ui-sref="home">Sniffer</a></li>
               <li><a ui-sref="config">Config</a></li>
               <li><a href="/red">Backend</a></li>
+              <li class="divider"></li>
+              <li><a ui-sref="eeprom">WB Config</a></li>
+              <li><a ui-sref="ubin">Ubin Search</a></li>
+              <li><a ui-sref="tracker">Tracker List</a></li>
             </ul>
           </li>
         </ul>

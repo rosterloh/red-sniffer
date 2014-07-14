@@ -23,7 +23,14 @@ var settings = {
   userDir: __dirname+'/.nodered',
   nodesDir: __dirname+'/nodes',
   flowFile: 'flows.json',
-  verbose: true
+  verbose: true,
+  functionGlobalContext: {
+    MS_PER_BYTE:1/4.8,
+    arrayType: ['unknown','wb','dock','clip'],
+    index:0,
+    timeStampFirstPacket:0,
+    startup:Date.now()
+  }
 };
 
 // Initialise the runtime with a server and settings
@@ -35,7 +42,7 @@ app.use(settings.httpAdminRoot,RED.httpAdmin);
 // Serve the http nodes UI from /api
 app.use(settings.httpNodeRoot,RED.httpNode);
 
-server.listen(process.env.PORT || 8000);
+server.listen(process.env.PORT || 80);
 
 // Start the runtime
 RED.start();

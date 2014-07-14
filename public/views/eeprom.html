@@ -1,0 +1,89 @@
+<div class="container theme-showcase" role="main">
+  <div class="jumbotron">
+    <p>Edit the values and hit the generate button</p>
+    <p><a href="#" ng-click="generateFile" class="btn btn-primary btn-lg" role="button">Generate &raquo;</a></p>
+  </div>
+  <div class="page-header">
+    <h1>Structure</h1>
+  </div>
+  <table id="tablearea" class="table table-striped">
+    <thead>
+      <tr>
+        <th class="col-md-2">#</th>
+        <th class="col-md-6">Name</th>
+        <th class="col-md-4">Value</th>
+      </tr>
+    </thead>
+  </table>
+
+  <div class="page-header">
+    <h1>Documentation</h1>
+  </div>
+  <div class="well">
+    <pre>
+      #define ACC_SAMPLING_PERIOD_ms              (20)
+      #define ACC_SAMPLING_FREQUENCY_Hz           (1000 /ACC_SAMPLING_PERIOD_ms)
+
+      #define UI_FALL_REPORT_DELAY_ms             (1000)
+      #define UI_DELAY_BETWEEN_FALL_ALERTS_ms     (5000)
+
+      #define MO_CONFIG_CHECK_PERIOD_ms           (30*1000)  /* every 30 sec */
+      #define MO_ACC_REBOOT_PERIOD_ms             (47*60*1000)  /* every 47 min */
+      #define MO_ACC_POLLING_PERIOD_ms            (20)
+
+
+      /*
+          The following parameters are all read off EEProm now
+          Because of the way the EEProm works, if we want to change any of these values,
+          we need to ensure EEProm_Reset_To_Defaults() is called at somepoint after bootup;
+          which will then ensure the new defaults are written to EEProm
+      */
+
+      #define default_AM_INEGRATION_PERIOD_DEFAULT_ms     (1*60*1000)     /* 1 min */
+
+      #define default_AM_MAXIMUM_PERIOD_min               (30)
+
+      /***** Parameters for Simple Fall Detection algorithm *****/
+
+      /* Parameter 1: acceleration-after-free-fall detection : BUMP_THRESHOLD
+           Note: tested combinations:
+           2g, 20 ms -- bad -- too sensitive
+      */
+      #define default_BUMP_THRESHOLD_uG             3000000 // 3.0g
+      #define default_BUMP_DEBOUNCE_TIME_ms      20
+
+      /* Parameter 2: threshold for free fall acceleration : FREEFALL_THRESHOLD       */
+      /* Parameter 3: threshold for free fall time : FREEFALL_DEBOUNCE_TIME             */
+      /* Note that Parameters 2 and 3 together specify pre-impact velocity which can  */
+      /* be calculated as v = (1g -FREEFALL_THRESHOLD)*FREEFALL_DEBOUNCE_TIME  */
+      /* Velocity value threshold should be around 0.9  m/s   */
+
+      /* Test 1: v = 1.37 m/s
+          Note: Arnake test shows (0% sensitivity, 100% selectivity) with this settings,
+          but my own tests when falling in a chair showed this threshold is working
+      */
+      #define default_FREEFALL_THRESHOLD_uG                450000     //  0.45g
+      #define default_FREEFALL_DEBOUNCE_TIME_ms         250
+
+      /*  Test 2: v = 1.0m/s = (1-0.5)*10m/s^2 * 200ms    */
+      //#define FREEFALL_THRESHOLD_uG              500000     //  0.5g
+      //#define FREEFALL_DEBOUNCE_TIME_ms       200
+
+      /* Parameter 4: specify how long we will wait for an impact : FREEFALL_WAIT_BUMP  */
+      #define default_FREEFALL_WAIT_BUMP_ms               350
+
+      /* Parameter 5: impact detection threshold : IMPACT_THRESHOLD
+          Note: tested combinations:
+          7g , 0 ms -- bad -- not enough sensitive
+          6g, 0 ms -- bad -- not enough sensitive
+          4g, 20 ms -- bad -- too sensitive
+      */
+      #define default_IMPACT_THRESHOLD_uG             5000000 //  5.0g
+      #define default_IMPACT_DEBOUNCE_TIME_ms     20
+
+      /***** Parameters for Activity Monitoring *****/
+      #define default_ACTIVITY_DETECT_THRESH_uG                    300000 // 0.3 g
+      #define default_ACTIVITY_DETECT_DEBOUNCE_TIME_ms       0
+    </pre>
+  </div>
+</div> <!-- /container -->

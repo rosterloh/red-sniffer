@@ -1,10 +1,23 @@
 <div class="container-fluid">
-
+  <div class="row">
+    <button type="button" class="btn btn-primary" ng-click="zoomIn">
+      <div><span class="glyphicon glyphicon-plus"></span> Zoom in</div>
+    </button>
+    <button type="button" class="btn btn-primary" ng-click="zoomOut">
+      <div><span class="glyphicon glyphicon-minus"></span> Zoom Out</div>
+    </button>
+    <button type="button" class="btn btn-primary" ng-click="noFit">
+      <div><span class="glyphicon glyphicon-remove"></span> No Fit</div>
+    </button>
+  </div>
   <div ng-switch on="graph.error">
 	  <div ng-switch-when="0">
-	     <div id="graph" vis-graph data="graph.data" options="graph.options" event="select" callback="callbackFunction(params)" style="width: 100%; height: 600px"></div>
+	     <div id="graph" vis-graph data="data" groups="groups" options="graph.options" event="select" callback="console.log(params)"></div>
     </div>
 		<div ng-switch-default></div>
   </div>
-
+  <button type="button" class="btn btn-primary" ng-click="clearLog" disabled>
+    <div><span class="glyphicon glyphicon-fire"></span> Clear Log</div> 
+  </button>
+  <div id="log"></div>
 </div>
